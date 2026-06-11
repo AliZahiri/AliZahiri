@@ -2,7 +2,7 @@
 
 DevOps & Platform Architect focused on building reliable, automated, observable, and maintainable infrastructure for production systems.
 
-I work on platform engineering, CI/CD automation, containerized deployments, observability, Linux operations, API gateways, infrastructure workflows, and practical automation development with Python and Bash.
+I work on platform engineering, CI/CD automation, containerized deployments, observability, Linux operations, API gateways, AI/LLM platform infrastructure, and practical automation development with Python and Bash.
 
 ## What I Do
 
@@ -11,6 +11,7 @@ I work on platform engineering, CI/CD automation, containerized deployments, obs
 - Implement monitoring and observability with Prometheus, Grafana, Alertmanager, Loki, exporters, and blackbox checks
 - Automate infrastructure and operational workflows with Ansible, Bash, and GitLab CI
 - Build practical automation scripts, operational tools, and integration workflows with Python and Bash
+- Design infrastructure patterns for AI, LLM, and RAG platforms, including gateway, routing, model serving, storage, and observability layers
 - Design API Gateway, reverse proxy, registry, backup, and deployment architectures
 - Help teams move from manual operations to repeatable, maintainable platform workflows
 
@@ -21,6 +22,7 @@ I work on platform engineering, CI/CD automation, containerized deployments, obs
 - CI/CD Automation
 - Observability and Reliability
 - Infrastructure Automation
+- AI/LLM Platform Infrastructure
 - Production Linux Operations
 - Containerized Deployments
 - On-prem and Hybrid Infrastructure
@@ -31,6 +33,7 @@ I work on platform engineering, CI/CD automation, containerized deployments, obs
 **Containers:** Docker, Docker Compose, Kubernetes  
 **Development & Scripting:** Python, Bash  
 **Automation:** Ansible, Terraform, shell scripting  
+**AI/LLM Platforms:** RAG, Dify, LiteLLM, vLLM, vector databases  
 **Observability:** Prometheus, Grafana, Alertmanager, Loki, Node Exporter, cAdvisor, Blackbox Exporter  
 **Gateway & Proxy:** Nginx, Kong, Traefik, Apache APISIX  
 **Databases:** PostgreSQL, MongoDB, MySQL  
@@ -44,6 +47,7 @@ My public repositories are being organized around:
 - Reusable DevOps and platform templates
 - Monitoring and observability stacks
 - API gateway and reverse proxy patterns
+- AI/LLM and RAG platform infrastructure
 - Container-based deployment examples
 - Backup, automation, and operational scripts
 - Infrastructure documentation and production notes

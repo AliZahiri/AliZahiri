@@ -1,5 +1,9 @@
 # Ali Zahiri
 
+<p align="center">
+  <img src="assets/devops-platform-architect.png" alt="DevOps & Platform Architect - designing scalable and reliable cloud and on-prem platforms" />
+</p>
+
 **DevOps & Platform Architect**  
 Designing reliable, scalable cloud and on-prem platforms.
 

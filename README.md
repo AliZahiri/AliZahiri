@@ -51,4 +51,5 @@ My public repositories are being organized around:
 ## Contact
 
 GitHub: [@AliZahiri](https://github.com/AliZahiri)  
-LinkedIn: [zahiri](https://www.linkedin.com/in/zahiri/)
+LinkedIn: [zahiri](https://www.linkedin.com/in/zahiri/)  
+Instagram: [s.ali.zahiri](https://www.instagram.com/s.ali.zahiri/)

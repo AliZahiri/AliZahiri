@@ -1,56 +1,77 @@
-# Hi, I'm Ali Zahiri
+# Ali Zahiri
 
-DevOps & Platform Architect focused on building reliable, automated, observable, and maintainable infrastructure for production systems.
+**DevOps & Platform Architect**  
+Designing reliable, scalable cloud and on-prem platforms.
 
-I work on platform engineering, CI/CD automation, containerized deployments, observability, Linux operations, API gateways, AI/LLM platform infrastructure, and practical automation development with Python and Bash.
+I build and improve production infrastructure: CI/CD systems, Docker and Kubernetes-ready deployments, observability stacks, Linux operations, API gateways, automation workflows, and AI/LLM platform infrastructure.
 
-## What I Do
+## What I Build
 
-- Design and improve CI/CD workflows for backend, frontend, and infrastructure projects
-- Build Docker and Docker Compose-based deployment systems with Kubernetes-ready architecture
-- Implement monitoring and observability with Prometheus, Grafana, Alertmanager, Loki, exporters, and blackbox checks
-- Automate infrastructure and operational workflows with Ansible, Bash, and GitLab CI
-- Build practical automation scripts, operational tools, and integration workflows with Python and Bash
-- Design infrastructure patterns for AI, LLM, and RAG platforms, including gateway, routing, model serving, storage, and observability layers
-- Design API Gateway, reverse proxy, registry, backup, and deployment architectures
-- Help teams move from manual operations to repeatable, maintainable platform workflows
+- Platform foundations for backend, frontend, and infrastructure teams
+- Docker Compose and container deployment patterns with health-check-gated release flows
+- GitLab CI templates for build, deploy, rollback, and repeatable delivery
+- Observability stacks with Prometheus, Grafana, Alertmanager, Loki, exporters, and blackbox checks
+- API gateway and reverse proxy layers with Kong, decK, Nginx, Traefik, and APISIX
+- AI, LLM, and RAG platform infrastructure around Dify, LiteLLM, vLLM, vector databases, PostgreSQL, Redis, and monitoring
+- Linux automation, hardening, backup, and operational tooling with Ansible, Python, and Bash
 
-## Main Focus Areas
+## Focus Areas
 
-- Platform Engineering
-- DevOps Architecture
-- CI/CD Automation
-- Observability and Reliability
-- Infrastructure Automation
-- AI/LLM Platform Infrastructure
-- Production Linux Operations
-- Containerized Deployments
-- On-prem and Hybrid Infrastructure
+| Area | Practical Focus |
+| --- | --- |
+| Platform Engineering | Production infrastructure, delivery workflows, operational standards |
+| CI/CD | GitLab CI, reusable pipeline templates, Docker image build and deploy |
+| Containers | Docker, Docker Compose, Kubernetes-ready service design |
+| Zero-Downtime Deployments | Blue/green patterns, health checks, reverse proxy switching |
+| Observability | Prometheus, Grafana, Alertmanager, Loki, exporters, dashboards |
+| API Gateway | Kong, decK, Nginx, Traefik, APISIX, routing, rate limits, access logs |
+| AI/LLM Platforms | RAG, Dify, LiteLLM, vLLM, vector databases, GPU inference planning |
+| Automation | Ansible, Python, Bash, Terraform, operational scripts |
+| Systems | Linux, Ubuntu, systemd, networking, firewalling, backup and replication |
 
-## Tech Stack
+## Project Map
 
-**CI/CD:** GitLab CI, GitHub Actions  
-**Containers:** Docker, Docker Compose, Kubernetes  
-**Development & Scripting:** Python, Bash  
-**Automation:** Ansible, Terraform, shell scripting  
-**AI/LLM Platforms:** RAG, Dify, LiteLLM, vLLM, vector databases  
-**Observability:** Prometheus, Grafana, Alertmanager, Loki, Node Exporter, cAdvisor, Blackbox Exporter  
-**Gateway & Proxy:** Nginx, Kong, Traefik, Apache APISIX  
-**Databases:** PostgreSQL, MongoDB, MySQL  
-**Registry & Packages:** Nexus, Docker Registry  
-**Systems:** Linux, Ubuntu, systemd, networking, firewalling, backup and replication
+### AI / LLM Platform Infrastructure
 
-## Repository Themes
+- [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint)  
+  Reference architecture for AI, LLM, and RAG platforms with gateway, routing, storage, inference, and observability notes.
 
-My public repositories are being organized around:
+### CI/CD and Docker Compose Deployments
 
-- Reusable DevOps and platform templates
-- Monitoring and observability stacks
-- API gateway and reverse proxy patterns
-- AI/LLM and RAG platform infrastructure
-- Container-based deployment examples
-- Backup, automation, and operational scripts
-- Infrastructure documentation and production notes
+- [gitlab-ci-compose-zero-downtime](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime)  
+  GitLab CI templates for Docker Compose blue/green deployments with health-check-gated traffic switching.
+
+### API Gateway and Traffic Management
+
+- [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway)  
+  Kong Gateway and decK Docker Compose kit with declarative gateway config and blue/green upstream promotion.
+
+- [apisix-bootstrap-kit](https://github.com/AliZahiri/apisix-bootstrap-kit)  
+  Docker Compose bootstrap kit for Apache APISIX with etcd, dashboard, templated config, and sample routes.
+
+### Linux Operations and Automation
+
+- [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap)  
+  Ansible baseline for Linux server bootstrap, Docker hosts, firewall, monitoring exporters, and backup helpers.
+
+- [FigmaBackup](https://github.com/AliZahiri/FigmaBackup)  
+  Python automation script for incremental Figma project backups from a CSV source with retention cleanup.
+
+### Observability
+
+- [elk-prom-stack](https://github.com/AliZahiri/elk-prom-stack)  
+  Docker Compose observability stack with Elasticsearch, Kibana, Prometheus, Grafana, Alertmanager, and Node Exporter.
+
+## Current Direction
+
+I am organizing my public repositories around practical platform work:
+
+- AI/LLM and RAG infrastructure blueprints
+- Docker Compose production deployment patterns
+- CI/CD templates for repeatable delivery
+- Gateway-as-code with Kong and decK
+- Linux automation and operational baselines
+- Monitoring, backup, and reliability-focused runbooks
 
 ## Contact
 

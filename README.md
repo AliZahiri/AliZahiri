@@ -79,6 +79,6 @@ I am organizing my public repositories around practical platform work:
 
 ## Contact
 
-GitHub: [@AliZahiri](https://github.com/AliZahiri)  
-LinkedIn: [zahiri](https://www.linkedin.com/in/zahiri/)  
-Instagram: [s.ali.zahiri](https://www.instagram.com/s.ali.zahiri/)
+GitHub: [@S.Ali.Zahiri](https://github.com/AliZahiri)  
+LinkedIn: [Zahiri](https://www.linkedin.com/in/zahiri/)  
+Instagram: [S.Ali.Zahiri](https://www.instagram.com/s.ali.zahiri/)

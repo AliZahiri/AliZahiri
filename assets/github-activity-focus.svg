@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">GitHub activity focus radar</title>
+  <desc id="desc">A dark activity focus chart showing commits, issues, pull requests, and code review.</desc>
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="360" height="220" rx="10" fill="#0d1117" />
+
+  <g stroke="#39d353" stroke-linecap="round">
+    <line x1="180" y1="30" x2="180" y2="174" stroke-width="2" opacity="0.95" />
+    <line x1="75" y1="110" x2="286" y2="110" stroke-width="2" opacity="0.95" />
+    <line x1="78" y1="110" x2="207" y2="110" stroke-width="9" opacity="0.18" filter="url(#glow)" />
+    <line x1="84" y1="110" x2="199" y2="110" stroke-width="4" opacity="0.72" filter="url(#glow)" />
+  </g>
+
+  <g fill="#0d1117" stroke="#7ee787" stroke-width="3" filter="url(#glow)">
+    <circle cx="84" cy="110" r="4" />
+    <circle cx="180" cy="110" r="5" />
+    <circle cx="207" cy="110" r="4" />
+    <circle cx="180" cy="102" r="3" />
+  </g>
+
+  <g fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">
+    <text x="180" y="18" text-anchor="middle" fill="#9fb3c8">Code review</text>
+    <text x="180" y="202" text-anchor="middle" fill="#9fb3c8">Pull requests</text>
+    <text x="49" y="106" text-anchor="middle">76%</text>
+    <text x="49" y="124" text-anchor="middle" fill="#9fb3c8">Commits</text>
+    <text x="314" y="106" text-anchor="middle">21%</text>
+    <text x="314" y="124" text-anchor="middle" fill="#9fb3c8">Issues</text>
+    <text x="180" y="190" text-anchor="middle">2%</text>
+  </g>
+</svg>

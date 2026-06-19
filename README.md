@@ -4,8 +4,10 @@
   <img src="assets/devops-platform-architect.png" alt="DevOps & Platform Architect - designing reliable platforms, backend systems, and production infrastructure" />
 </p>
 
-**DevOps & Platform Architect**
-Building reliable infrastructure, backend services, CI/CD systems, and observable production platforms.
+<p align="center">
+  <strong>DevOps & Platform Architect</strong><br />
+  Building reliable infrastructure, backend services, CI/CD systems, and observable production platforms.
+</p>
 
 I work at the intersection of platform engineering, backend development, automation, and production operations. My focus is on turning fragile delivery and infrastructure workflows into systems that are repeatable, observable, maintainable, and ready for real-world production use.
 
@@ -14,7 +16,9 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 ## GitHub Activity
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=AliZahiri&theme=github_dark" alt="Ali Zahiri GitHub contribution summary" />
+  <img width="32%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=AliZahiri&theme=github_dark" alt="Ali Zahiri GitHub contribution summary" />
+  <img width="32%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=AliZahiri&theme=github_dark&utcOffset=3.5" alt="Ali Zahiri GitHub productive time" />
+  <img width="32%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=AliZahiri&theme=github_dark" alt="Ali Zahiri GitHub top languages by commits" />
 </p>
 
 ## What I Work On
@@ -43,36 +47,6 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 | AI/LLM Platforms     | RAG, LLM routing, vector databases, GPU inference planning, monitoring      |
 | Automation           | Ansible, Python, Bash, Terraform, operational scripts                       |
 | Systems              | Linux, Ubuntu, systemd, networking, firewalling, backup and replication     |
-
-## Tech Stack
-
-### Backend & Automation
-
-Python · REST APIs · Background Jobs · PostgreSQL · Redis · Bash
-
-### CI/CD & Delivery
-
-GitLab CI · GitHub Actions · Docker Build · Release Automation · Rollback Workflows
-
-### Containers & Platform
-
-Docker · Docker Compose · Kubernetes · Linux · systemd
-
-### Observability
-
-Prometheus · Grafana · Alertmanager · Loki · Node Exporter · cAdvisor · Blackbox Exporter
-
-### Gateway & Traffic
-
-Nginx · Kong · decK · Traefik · APISIX · Reverse Proxy · Routing
-
-### Infrastructure & Operations
-
-Ansible · Terraform · Nexus · Docker Registry · Backup · Replication · Firewalling
-
-### AI / LLM Infrastructure
-
-Dify · LiteLLM · vLLM · Vector Databases · PostgreSQL · Redis · Monitoring
 
 ## Project Map
 
@@ -118,8 +92,3 @@ I am organizing my public work around practical production engineering:
 * Gateway-as-code with Kong, decK, APISIX, and Nginx
 * Linux automation and operational baselines
 * Monitoring, backup, replication, and reliability-focused runbooks
-
-## Contact
-
-GitHub: [@AliZahiri](https://github.com/AliZahiri)
-LinkedIn: [zahiri](https://www.linkedin.com/in/zahiri/)

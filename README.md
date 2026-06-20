@@ -25,12 +25,12 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 
 * Platform foundations for backend, frontend, AI, and infrastructure teams
 * Python backend services, APIs, automation tools, and workflow integrations
-* GitLab CI templates for build, test, deploy, rollback, and repeatable delivery
-* Docker and Docker Compose deployment patterns for production-like environments
-* Kubernetes-ready architecture and scalable service design
-* Observability stacks with Prometheus, Grafana, Alertmanager, Loki, exporters, and blackbox checks
-* API gateway and reverse proxy layers with Kong, decK, Nginx, Traefik, and APISIX
 * AI, LLM, and RAG platform infrastructure with routing, storage, inference, and monitoring concerns
+* Kubernetes-ready architecture and scalable service design
+* Docker and Docker Compose deployment patterns for production-like environments
+* API gateway and reverse proxy layers with Kong, decK, Nginx, Traefik, and APISIX
+* GitLab CI templates for build, test, deploy, rollback, and repeatable delivery
+* Observability stacks with Prometheus, Grafana, Alertmanager, Loki, exporters, and blackbox checks
 * Linux automation, hardening, backup, replication, and operational tooling with Ansible, Python, and Bash
 
 ## Focus Areas

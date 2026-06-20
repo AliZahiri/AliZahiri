@@ -14,7 +14,7 @@
 
   <rect width="360" height="220" rx="10" fill="#0d1117" />
 
-  <g stroke="#39d353" stroke-linecap="round">
+  <g stroke="#1f6feb" stroke-linecap="round">
     <line x1="180" y1="28" x2="180" y2="192" stroke-width="2" opacity="0.95" />
     <line x1="54" y1="110" x2="306" y2="110" stroke-width="2" opacity="0.95" />
     <line x1="75" y1="110" x2="194" y2="110" stroke-width="9" opacity="0.18" filter="url(#glow)" />
@@ -22,7 +22,7 @@
     <line x1="180" y1="110" x2="180" y2="115" stroke-width="4" opacity="0.35" filter="url(#glow)" />
   </g>
 
-  <g fill="#0d1117" stroke="#7ee787" stroke-width="3" filter="url(#glow)">
+  <g fill="#0d1117" stroke="#58a6ff" stroke-width="3" filter="url(#glow)">
     <circle cx="75" cy="110" r="4" />
     <circle cx="180" cy="110" r="5" />
     <circle cx="194" cy="110" r="4" />

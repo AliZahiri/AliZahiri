@@ -18,7 +18,7 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 <p align="center">
   <img width="31%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=AliZahiri&theme=github_dark" alt="Ali Zahiri GitHub contribution summary" />
   <img width="31%" src="assets/github-activity-focus.svg" alt="Ali Zahiri GitHub activity focus chart" />
-  <img width="31%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=AliZahiri&theme=github_dark" alt="Ali Zahiri GitHub top languages by commits" />
+  <img width="31%" src="assets/github-top-languages.svg" alt="Ali Zahiri GitHub top languages chart" />
 </p>
 
 ## What I Work On

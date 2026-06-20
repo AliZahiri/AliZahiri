@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
+  <title id="title">Top commit languages for AliZahiri</title>
+  <desc id="desc">Top public repository languages by byte size. Python: 76, Shell: 24</desc>
+  <!-- Generated from GitHub repository language data at 2026-06-20 UTC. -->
+  <defs>
+    <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="360" height="220" rx="10" fill="#0d1117" />
+  <text x="64" y="40" fill="#2f81f7" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="20" font-weight="600">Top Languages</text>
+
+  <g font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">
+    <rect x="64" y="83" width="10" height="10" rx="2" fill="#2f81f7" />
+    <text x="84" y="92" fill="#c9d1d9">Python</text>
+    <text x="176" y="92" fill="#8b949e" text-anchor="end">76%</text>
+    <rect x="64" y="105" width="10" height="10" rx="2" fill="#1f6feb" />
+    <text x="84" y="114" fill="#c9d1d9">Shell</text>
+    <text x="176" y="114" fill="#8b949e" text-anchor="end">24%</text>
+  </g>
+
+  <g filter="url(#soft-glow)">
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#161b22" stroke-width="22" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#2f81f7" stroke-width="22" stroke-dasharray="199.06 64.83" stroke-dashoffset="-0.00" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#1f6feb" stroke-width="22" stroke-dasharray="61.83 202.06" stroke-dashoffset="-200.56" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="25" fill="#0d1117" />
+  </g>
+</svg>

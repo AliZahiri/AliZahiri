@@ -50,6 +50,15 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 
 ## Project Map
 
+### Featured Portfolio Systems
+
+| Project | What it demonstrates | Production signal |
+| --- | --- | --- |
+| [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint) | AI/RAG platform architecture, LLM routing, privacy, source freshness | LiteLLM preflight validation, PII redaction policy, provider fallback checks |
+| [gitlab-ci-compose-zero-downtime](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime) | GitLab CI and Docker Compose blue/green deployment | Health-gated promotion, rollback flow, smoke tests, deployment safety helpers |
+| [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway) | Kong Gateway and decK gateway-as-code | decK diff workflow, route promotion, plugin policy, ownership and drift checks |
+| [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap) | Linux bootstrap and operational hardening with Ansible | SSH hardening, auditd, journald, backup/restore, sudoers and vault hygiene |
+
 ### AI / LLM Platform Infrastructure
 
 * [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint)

@@ -101,3 +101,9 @@ I am organizing my public work around practical production engineering:
 * Gateway-as-code with Kong, decK, APISIX, and Nginx
 * Linux automation and operational baselines
 * Monitoring, backup, replication, and reliability-focused runbooks
+
+## Collaboration
+
+I am available for focused freelance work around platform architecture, CI/CD modernization, Docker and Kubernetes-ready delivery, API gateways, observability, Python automation, and production hardening.
+
+Connect on [LinkedIn](https://www.linkedin.com/in/zahiri/) to discuss a platform, deployment, or reliability challenge.

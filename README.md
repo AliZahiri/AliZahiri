@@ -59,6 +59,18 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 | [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway) | Kong Gateway and decK gateway-as-code | Certificate readiness, decK promotion safety, and protected-plugin approval |
 | [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap) | Linux bootstrap and operational hardening with Ansible | Firewall lockout prevention, backup recovery evidence, and handler validation |
 
+### Review a Concrete Engineering Control
+
+For a quick technical review, these entry points show the assumptions, safety
+contracts, and validation approach behind each featured system:
+
+| Engineering question | Start here |
+| --- | --- |
+| How is an AI/RAG request routed and observed? | [RAG platform architecture](https://github.com/AliZahiri/ai-rag-platform-blueprint/blob/main/docs/architecture.md) |
+| What makes a Compose blue/green promotion safe to attempt? | [Compose deployment guide](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime/blob/main/docs/zero-downtime-compose.md) |
+| How are Kong and decK changes promoted and rolled back? | [Gateway change runbook](https://github.com/AliZahiri/kong-deck-compose-gateway/blob/main/docs/zero-downtime-kong-deck.md) |
+| Which Linux hardening and recovery concerns are covered? | [Linux hardening checklist](https://github.com/AliZahiri/ansible-linux-ops-bootstrap/blob/main/docs/hardening-checklist.md) |
+
 ### AI / LLM Platform Infrastructure
 
 * [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint)

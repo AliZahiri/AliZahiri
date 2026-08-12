@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
   <title id="title">Top commit languages for AliZahiri</title>
-  <desc id="desc">Top public repository languages by byte size. Python: 533143, Shell: 12787, Jinja: 4876, Smarty: 1868, Go Template: 867</desc>
-  <!-- Generated from GitHub repository language data at 2026-08-11 UTC. -->
+  <desc id="desc">Top public repository languages by byte size. Python: 548567, Shell: 12787, Jinja: 4876, Smarty: 1868, Go Template: 867</desc>
+  <!-- Generated from GitHub repository language data at 2026-08-12 UTC. -->
   <defs>
     <filter id="soft-glow" x="-40%" y="-40%" width="180%" height="180%">
       <feGaussianBlur stdDeviation="2.5" result="blur" />
@@ -35,11 +35,11 @@
 
   <g filter="url(#soft-glow)">
     <circle cx="250" cy="112" r="42" fill="transparent" stroke="#161b22" stroke-width="22" />
-    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#2f81f7" stroke-width="22" stroke-dasharray="252.67 11.22" stroke-dashoffset="-0.00" stroke-linecap="butt" transform="rotate(-90 250 112)" />
-    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#1f6feb" stroke-width="22" stroke-dasharray="4.60 259.30" stroke-dashoffset="-254.17" stroke-linecap="butt" transform="rotate(-90 250 112)" />
-    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#58a6ff" stroke-width="22" stroke-dasharray="0.82 263.07" stroke-dashoffset="-260.27" stroke-linecap="butt" transform="rotate(-90 250 112)" />
-    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#79c0ff" stroke-width="22" stroke-dasharray="0.00 263.89" stroke-dashoffset="-262.59" stroke-linecap="butt" transform="rotate(-90 250 112)" />
-    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#388bfd" stroke-width="22" stroke-dasharray="0.00 263.89" stroke-dashoffset="-263.48" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#2f81f7" stroke-width="22" stroke-dasharray="252.93 10.96" stroke-dashoffset="-0.00" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#1f6feb" stroke-width="22" stroke-dasharray="4.43 259.46" stroke-dashoffset="-254.43" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#58a6ff" stroke-width="22" stroke-dasharray="0.76 263.13" stroke-dashoffset="-260.36" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#79c0ff" stroke-width="22" stroke-dasharray="0.00 263.89" stroke-dashoffset="-262.63" stroke-linecap="butt" transform="rotate(-90 250 112)" />
+    <circle cx="250" cy="112" r="42" fill="transparent" stroke="#388bfd" stroke-width="22" stroke-dasharray="0.00 263.89" stroke-dashoffset="-263.49" stroke-linecap="butt" transform="rotate(-90 250 112)" />
     <circle cx="250" cy="112" r="25" fill="#0d1117" />
   </g>
 </svg>

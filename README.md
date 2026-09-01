@@ -54,10 +54,10 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 
 | Project | What it demonstrates | Production signal |
 | --- | --- | --- |
-| [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint) | AI/RAG platform architecture, LLM routing, privacy, source freshness | Provider preflight, citation freshness, and evaluation-slice release gates |
-| [gitlab-ci-compose-zero-downtime](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime) | GitLab CI and Docker Compose blue/green deployment | Timestamped health windows, resumable checkpoints, and rollback evidence |
-| [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway) | Kong Gateway and decK gateway-as-code | Certificate readiness, decK promotion safety, and protected-plugin approval |
-| [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap) | Linux bootstrap and operational hardening with Ansible | Firewall lockout prevention, backup recovery evidence, and handler validation |
+| [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint) | AI/RAG platform architecture, LLM routing, privacy, source freshness | Deletion propagation, citation traceability, and evaluation drift gates |
+| [gitlab-ci-compose-zero-downtime](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime) | GitLab CI and Docker Compose blue/green deployment | Writable-volume isolation, cancellation recovery, and health-gated promotion |
+| [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway) | Kong Gateway and decK gateway-as-code | Data-plane digest convergence, decK diff safety, and break-glass controls |
+| [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap) | Linux bootstrap and operational hardening with Ansible | Live firewall drift, scoped sudo grants, and backup recovery evidence |
 
 ### Review a Concrete Engineering Control
 

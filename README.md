@@ -16,10 +16,12 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
 ## GitHub Activity
 
 <p align="center">
-  <img width="31%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=AliZahiri&theme=github_dark" alt="Ali Zahiri GitHub contribution summary" />
-  <img width="31%" src="assets/github-activity-focus.svg" alt="Ali Zahiri GitHub activity focus chart" />
-  <img width="31%" src="assets/github-top-languages.svg" alt="Ali Zahiri GitHub top languages chart" />
+  <img width="48%" src="assets/github-activity-focus.svg" alt="Ali Zahiri GitHub activity focus chart" />
+  <img width="48%" src="assets/github-top-languages.svg" alt="Ali Zahiri GitHub top languages chart" />
 </p>
+
+The activity charts are generated daily from GitHub data by this repository's
+scheduled workflow, so the profile does not depend on a third-party card service.
 
 ## What I Work On
 

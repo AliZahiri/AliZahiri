@@ -1,4 +1,4 @@
-name: Update Activity Focus Chart
+name: Update GitHub Activity Charts
 
 on:
   schedule:
@@ -27,12 +27,15 @@ jobs:
 
       - name: Commit updated charts
         run: |
-          if git diff --quiet -- assets/github-activity-focus.svg assets/github-top-languages.svg; then
+          git add \
+            assets/github-activity-focus.svg \
+            assets/github-activity-counts.svg \
+            assets/github-top-languages.svg
+          if git diff --cached --quiet; then
             echo "GitHub activity charts are already up to date."
             exit 0
           fi
-          git config user.name "S.Ali Zahiri"
-          git config user.email "1667665+AliZahiri@users.noreply.github.com"
-          git add assets/github-activity-focus.svg assets/github-top-languages.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: update github activity charts"
           git push

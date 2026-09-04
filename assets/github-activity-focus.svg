@@ -1,47 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-labelledby="title desc">
-  <title id="title">GitHub activity focus radar for AliZahiri</title>
-  <desc id="desc">Activity focus for the last 365 days: 724 commits, 350 issues, 376 pull requests, and 0 code reviews.</desc>
-  <!-- Generated from GitHub contribution data at 2026-09-04 UTC. -->
-  <defs>
-    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-      <feGaussianBlur stdDeviation="3" result="blur" />
-      <feMerge>
-        <feMergeNode in="blur" />
-        <feMergeNode in="SourceGraphic" />
-      </feMerge>
-    </filter>
-  </defs>
-
-  <rect width="360" height="220" rx="10" fill="#0d1117" />
-
-  <g stroke="#1f6feb" stroke-linecap="round">
-    <line x1="180" y1="28" x2="180" y2="192" stroke-width="2" opacity="0.95" />
-    <line x1="54" y1="110" x2="306" y2="110" stroke-width="2" opacity="0.95" />
-    <line x1="117" y1="110" x2="210" y2="110" stroke-width="9" opacity="0.18" filter="url(#glow)" />
-    <line x1="117" y1="110" x2="210" y2="110" stroke-width="4" opacity="0.72" filter="url(#glow)" />
-    <line x1="180" y1="110" x2="180" y2="131" stroke-width="4" opacity="0.35" filter="url(#glow)" />
-  </g>
-
-  <g fill="#0d1117" stroke="#58a6ff" stroke-width="3" filter="url(#glow)">
-    <circle cx="117" cy="110" r="4" />
-    <circle cx="180" cy="110" r="5" />
-    <circle cx="210" cy="110" r="4" />
-    <circle cx="180" cy="110" r="3" />
-    <circle cx="180" cy="131" r="3" />
-  </g>
-
-  <g fill="#8b949e" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="13">
-    <text x="180" y="18" text-anchor="middle" fill="#9fb3c8">Code review</text>
-    <text x="180" y="213" text-anchor="middle" fill="#9fb3c8">Pull requests</text>
-    <text x="48" y="106" text-anchor="middle">50%</text>
-    <text x="48" y="124" text-anchor="middle" fill="#9fb3c8">Commits</text>
-    <text x="314" y="106" text-anchor="middle">24%</text>
-    <text x="314" y="124" text-anchor="middle" fill="#9fb3c8">Issues</text>
-    <text x="180" y="37" text-anchor="middle">0%</text>
-    <text x="180" y="198" text-anchor="middle">26%</text>
-  </g>
-
-  <g fill="#6e7681" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10">
-    <text x="180" y="94" text-anchor="middle">last 365 days</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220" role="img" aria-labelledby="activity-title activity-desc">
+  <title id="activity-title">GitHub activity distribution for AliZahiri</title>
+  <desc id="activity-desc">Last 365 days: 729 commits, 354 issues, 380 pull requests, and 0 code reviews.</desc>
+  <rect x="1" y="1" width="358" height="218" rx="12" fill="#0D1117" stroke="#0B1F3A" stroke-width="2" />
+  <path d="M13 1 H240" stroke="#1F6FEB" stroke-width="2" />
+  <path d="M240 1 H300" stroke="#F2B84B" stroke-width="2" />
+  <text x="20" y="32" fill="#F5F7FA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="18" font-weight="600">Activity Distribution</text>
+  <text x="20" y="51" fill="#AAB4C3" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="10">Last 365 days · 1,463 contributions</text>
+  <text x="20" y="78" fill="#F5F7FA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">Commits</text>
+  <text x="340" y="78" fill="#1F6FEB" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="end">50%</text>
+  <rect x="20" y="86" width="320" height="5" rx="2.5" fill="#081B33" />
+  <rect x="20" y="86" width="160.0" height="5" rx="2.5" fill="#1F6FEB" />
+  <text x="20" y="112" fill="#F5F7FA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">Issues</text>
+  <text x="340" y="112" fill="#F2B84B" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="end">24%</text>
+  <rect x="20" y="120" width="320" height="5" rx="2.5" fill="#081B33" />
+  <rect x="20" y="120" width="76.8" height="5" rx="2.5" fill="#F2B84B" />
+  <text x="20" y="146" fill="#F5F7FA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">Pull requests</text>
+  <text x="340" y="146" fill="#4EA1FF" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="end">26%</text>
+  <rect x="20" y="154" width="320" height="5" rx="2.5" fill="#081B33" />
+  <rect x="20" y="154" width="83.2" height="5" rx="2.5" fill="#4EA1FF" />
+  <text x="20" y="180" fill="#F5F7FA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12">Code review</text>
+  <text x="340" y="180" fill="#F5F7FA" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="12" font-weight="600" text-anchor="end">0%</text>
+  <rect x="20" y="188" width="320" height="5" rx="2.5" fill="#081B33" />
+  <rect x="20" y="188" width="0.0" height="5" rx="2.5" fill="#F5F7FA" />
 </svg>

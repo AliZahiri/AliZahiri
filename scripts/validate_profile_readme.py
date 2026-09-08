@@ -35,6 +35,7 @@ REQUIRED_ASSETS = (
     "assets/github-top-languages.svg",
 )
 ACTIVITY_ASSETS = REQUIRED_ASSETS[1:]
+REQUIRED_ACTIVITY_CADENCE = "refreshed every six hours"
 
 
 def activity_section(content: str) -> str:
@@ -75,6 +76,10 @@ def profile_readme_warnings(content: str) -> tuple[str, ...]:
                 warnings.append(f"invalid_svg_root:{asset}")
 
     section = activity_section(content)
+    if REQUIRED_ACTIVITY_CADENCE not in section:
+        warnings.append(
+            f"activity_cadence:expected={REQUIRED_ACTIVITY_CADENCE}"
+        )
     image_count = len(re.findall(r"<img\b", section))
     if image_count != 3:
         warnings.append(f"activity_chart_count:expected=3:actual={image_count}")

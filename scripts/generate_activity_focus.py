@@ -41,19 +41,28 @@ class ActivityCounts:
         return self.commits + self.issues + self.pull_requests + self.code_reviews
 
     def percentages(self) -> dict[str, int]:
-        if self.total == 0:
-            return {
-                "commits": 0,
-                "issues": 0,
-                "pull_requests": 0,
-                "code_reviews": 0,
-            }
-        return {
-            "commits": round(self.commits / self.total * 100),
-            "issues": round(self.issues / self.total * 100),
-            "pull_requests": round(self.pull_requests / self.total * 100),
-            "code_reviews": round(self.code_reviews / self.total * 100),
+        contribution_counts = {
+            "commits": self.commits,
+            "issues": self.issues,
+            "pull_requests": self.pull_requests,
+            "code_reviews": self.code_reviews,
         }
+        if self.total == 0:
+            return dict.fromkeys(contribution_counts, 0)
+
+        percentages: dict[str, int] = {}
+        remainders: list[tuple[int, str]] = []
+        for name, count in contribution_counts.items():
+            percentage, remainder = divmod(count * 100, self.total)
+            percentages[name] = percentage
+            remainders.append((remainder, name))
+
+        percentage_points_left = 100 - sum(percentages.values())
+        for _, name in sorted(remainders, key=lambda item: item[0], reverse=True)[
+            :percentage_points_left
+        ]:
+            percentages[name] += 1
+        return percentages
 
 
 @dataclass(frozen=True)

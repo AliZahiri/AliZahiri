@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>DevOps & Platform Architect</strong><br />
-  Building reliable infrastructure, backend services, CI/CD systems, and observable production platforms.
+  Designing scalable and reliable cloud and on-prem platforms.
 </p>
 
 I work at the intersection of platform engineering, backend development, automation, and production operations. My focus is on turning fragile delivery and infrastructure workflows into systems that are repeatable, observable, maintainable, and ready for real-world production use.
@@ -58,12 +58,18 @@ card service.
 
 ### Featured Portfolio Systems
 
-| Project | What it demonstrates | Production signal |
+| Project | What it demonstrates | Operational controls |
 | --- | --- | --- |
 | [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint) | AI/RAG platform architecture, LLM routing, privacy, source freshness | Deletion propagation, citation traceability, and evaluation drift gates |
 | [gitlab-ci-compose-zero-downtime](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime) | GitLab CI and Docker Compose blue/green deployment | Writable-volume isolation, cancellation recovery, and health-gated promotion |
 | [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway) | Kong Gateway and decK gateway-as-code | Data-plane digest convergence, decK diff safety, and break-glass controls |
 | [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap) | Linux bootstrap and operational hardening with Ansible | Live firewall drift, scoped sudo grants, and backup recovery evidence |
+
+The portfolio combines executable policy checks, tests, deployment examples, and
+runbooks. Most evidence gates run offline against supplied metadata; a passing
+gate does not prove that a live platform is healthy. Compose traffic promotion
+also depends on runtime health checks, proxy switching, rollback readiness, and
+the deployment assumptions documented in its guide.
 
 ### Review a Concrete Engineering Control
 
@@ -77,36 +83,13 @@ contracts, and validation approach behind each featured system:
 | How are Kong and decK changes promoted and rolled back? | [Gateway change runbook](https://github.com/AliZahiri/kong-deck-compose-gateway/blob/main/docs/zero-downtime-kong-deck.md) |
 | Which Linux hardening and recovery concerns are covered? | [Linux hardening checklist](https://github.com/AliZahiri/ansible-linux-ops-bootstrap/blob/main/docs/hardening-checklist.md) |
 
-### AI / LLM Platform Infrastructure
+### Supporting Projects
 
-* [ai-rag-platform-blueprint](https://github.com/AliZahiri/ai-rag-platform-blueprint)
-  Reference architecture for AI, LLM, and RAG platforms with gateway, routing, storage, inference, and observability notes.
-
-### CI/CD and Docker Compose Deployments
-
-* [gitlab-ci-compose-zero-downtime](https://github.com/AliZahiri/gitlab-ci-compose-zero-downtime)
-  GitLab CI templates for Docker Compose blue/green deployments with health-check-gated traffic switching.
-
-### API Gateway and Traffic Management
-
-* [kong-deck-compose-gateway](https://github.com/AliZahiri/kong-deck-compose-gateway)
-  Kong Gateway and decK Docker Compose kit with declarative gateway config and blue/green upstream promotion.
-
-* [apisix-bootstrap-kit](https://github.com/AliZahiri/apisix-bootstrap-kit)
-  Docker Compose bootstrap kit for Apache APISIX with etcd, dashboard, templated config, and sample routes.
-
-### Linux Operations and Automation
-
-* [ansible-linux-ops-bootstrap](https://github.com/AliZahiri/ansible-linux-ops-bootstrap)
-  Ansible baseline for Linux server bootstrap, Docker hosts, firewall, monitoring exporters, and backup helpers.
-
-* [FigmaBackup](https://github.com/AliZahiri/FigmaBackup)
-  Python automation script for incremental Figma project backups from a CSV source with retention cleanup.
-
-### Observability
-
-* [elk-prom-stack](https://github.com/AliZahiri/elk-prom-stack)
-  Docker Compose observability stack with Elasticsearch, Kibana, Prometheus, Grafana, Alertmanager, and Node Exporter.
+| Project | Practical focus |
+| --- | --- |
+| [apisix-bootstrap-kit](https://github.com/AliZahiri/apisix-bootstrap-kit) | APISIX, etcd, sample routes, and a Docker Compose gateway lab |
+| [FigmaBackup](https://github.com/AliZahiri/FigmaBackup) | Python automation for incremental project backups and retention |
+| [elk-prom-stack](https://github.com/AliZahiri/elk-prom-stack) | Elasticsearch, Kibana, Prometheus, Grafana, and exporter examples |
 
 ## Current Direction
 

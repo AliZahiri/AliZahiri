@@ -36,6 +36,8 @@ REQUIRED_ASSETS = (
 )
 ACTIVITY_ASSETS = REQUIRED_ASSETS[1:]
 REQUIRED_ACTIVITY_CADENCE = "refreshed every six hours"
+REQUIRED_POSITIONING = "Designing scalable and reliable cloud and on-prem platforms."
+REQUIRED_CONTACT = "https://www.linkedin.com/in/zahiri/"
 
 
 def activity_section(content: str) -> str:
@@ -48,6 +50,10 @@ def activity_section(content: str) -> str:
 
 def profile_readme_warnings(content: str) -> tuple[str, ...]:
     warnings: list[str] = []
+    if REQUIRED_POSITIONING not in content:
+        warnings.append("missing_platform_positioning")
+    if REQUIRED_CONTACT not in content:
+        warnings.append("missing_linkedin_contact")
     for section in REQUIRED_SECTIONS:
         if section not in content:
             warnings.append(f"missing_section:{section}")

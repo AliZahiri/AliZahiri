@@ -40,6 +40,26 @@ class ProfileReadmeValidationTests(unittest.TestCase):
                 self.assertIn("invalid_svg_xml:" + validator.ACTIVITY_ASSETS[0],
                               validator.profile_readme_warnings(self.content))
 
+    def test_svg_without_accessibility_metadata_is_reported(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for asset in validator.ACTIVITY_ASSETS:
+                target = root / asset
+                target.parent.mkdir(exist_ok=True)
+                target.write_text(
+                    '<svg xmlns="http://www.w3.org/2000/svg">' + "x" * 600 + "</svg>",
+                    encoding="utf-8",
+                )
+            banner = root / validator.REQUIRED_ASSETS[0]
+            banner.parent.mkdir(exist_ok=True)
+            banner.write_bytes(b"banner")
+            with patch.object(validator, "ROOT", root):
+                warnings = validator.profile_readme_warnings(self.content)
+        for asset in validator.ACTIVITY_ASSETS:
+            self.assertIn("invalid_svg_role:" + asset, warnings)
+            self.assertIn("invalid_svg_missing_title:" + asset, warnings)
+            self.assertIn("invalid_svg_missing_desc:" + asset, warnings)
+
     def test_extra_activity_image_is_reported(self):
         content = self.content.replace("## GitHub Activity", '## GitHub Activity\n<img src="extra.svg" />')
         self.assertIn("activity_chart_count:expected=3:actual=4",

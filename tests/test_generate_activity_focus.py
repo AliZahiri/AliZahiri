@@ -2,6 +2,7 @@ import tempfile
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
+from unittest.mock import patch
 
 from scripts.generate_activity_focus import (
     ActivityCounts,
@@ -67,6 +68,34 @@ class ActivitySvgTests(unittest.TestCase):
             self.assertEqual("first-original", first.read_text(encoding="utf-8"))
             self.assertEqual("second-original", second.read_text(encoding="utf-8"))
             self.assertFalse((root / ".first.svg.tmp").exists())
+
+    def test_replace_failure_restores_every_existing_output(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first = root / "first.svg"
+            second = root / "second.svg"
+            first.write_text("first-original", encoding="utf-8")
+            second.write_text("second-original", encoding="utf-8")
+            valid_card = render_activity_distribution_svg(
+                ActivityCounts(1, 0, 0, 0), "AliZahiri", 365
+            )
+            original_replace = Path.replace
+
+            def fail_second_publish(source: Path, destination: Path) -> Path:
+                if source.name == ".second.svg.tmp" and destination == second:
+                    raise OSError("simulated publish failure")
+                return original_replace(source, destination)
+
+            with patch.object(Path, "replace", new=fail_second_publish):
+                with self.assertRaisesRegex(OSError, "simulated publish failure"):
+                    write_outputs({first: valid_card, second: valid_card})
+
+            self.assertEqual("first-original", first.read_text(encoding="utf-8"))
+            self.assertEqual("second-original", second.read_text(encoding="utf-8"))
+            self.assertFalse((root / ".first.svg.tmp").exists())
+            self.assertFalse((root / ".second.svg.tmp").exists())
+            self.assertFalse((root / ".first.svg.bak").exists())
+            self.assertFalse((root / ".second.svg.bak").exists())
 
 
 if __name__ == "__main__":

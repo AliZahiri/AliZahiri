@@ -80,6 +80,13 @@ def profile_readme_warnings(content: str) -> tuple[str, ...]:
                 continue
             if root.tag != "{http://www.w3.org/2000/svg}svg":
                 warnings.append(f"invalid_svg_root:{asset}")
+                continue
+            if root.attrib.get("role") != "img":
+                warnings.append(f"invalid_svg_role:{asset}")
+            if not root.findall("{http://www.w3.org/2000/svg}title"):
+                warnings.append(f"invalid_svg_missing_title:{asset}")
+            if not root.findall("{http://www.w3.org/2000/svg}desc"):
+                warnings.append(f"invalid_svg_missing_desc:{asset}")
 
     section = activity_section(content)
     if REQUIRED_ACTIVITY_CADENCE not in section:

@@ -416,22 +416,41 @@ def validate_svg(content: str, label: str) -> None:
         raise RuntimeError(f"Generated invalid SVG for {label}: {error}") from error
     if root.tag != "{http://www.w3.org/2000/svg}svg":
         raise RuntimeError(f"Generated document is not an SVG: {label}")
+    if root.attrib.get("role") != "img":
+        raise RuntimeError(f"Generated SVG is missing an image role: {label}")
+    if not root.findall("{http://www.w3.org/2000/svg}title"):
+        raise RuntimeError(f"Generated SVG is missing an accessible title: {label}")
+    if not root.findall("{http://www.w3.org/2000/svg}desc"):
+        raise RuntimeError(f"Generated SVG is missing an accessible description: {label}")
 
 
 def write_outputs(outputs: dict[Path, str]) -> None:
-    temporary_files: list[Path] = []
+    staged_outputs: list[tuple[Path, Path, Path, bool]] = []
     try:
         for output, content in outputs.items():
             validate_svg(content, str(output))
             output.parent.mkdir(parents=True, exist_ok=True)
             temporary = output.with_name(f".{output.name}.tmp")
             temporary.write_text(content, encoding="utf-8")
-            temporary_files.append(temporary)
-        for output, temporary in zip(outputs, temporary_files, strict=True):
+            backup = output.with_name(f".{output.name}.bak")
+            staged_outputs.append((output, temporary, backup, output.exists()))
+
+        for output, temporary, backup, had_original in staged_outputs:
+            if had_original:
+                output.replace(backup)
             temporary.replace(output)
+    except Exception:
+        for output, _, backup, had_original in reversed(staged_outputs):
+            if had_original and backup.exists():
+                output.unlink(missing_ok=True)
+                backup.replace(output)
+            elif not had_original:
+                output.unlink(missing_ok=True)
+        raise
     finally:
-        for temporary in temporary_files:
+        for _, temporary, backup, _ in staged_outputs:
             temporary.unlink(missing_ok=True)
+            backup.unlink(missing_ok=True)
 
 
 def parse_args() -> argparse.Namespace:

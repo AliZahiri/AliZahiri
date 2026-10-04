@@ -2,7 +2,8 @@ name: Update GitHub Activity Charts
 
 on:
   schedule:
-    - cron: "20 */6 * * *"
+    # 08:00 Asia/Tehran (UTC+03:30)
+    - cron: "30 4 * * *"
   workflow_dispatch:
 
 permissions:

@@ -23,9 +23,9 @@ Alongside DevOps and platform work, I also build Python-based backend services, 
   <img width="48%" src="assets/github-top-languages.svg" alt="Ali Zahiri GitHub top languages chart" />
 </p>
 
-All three activity charts are refreshed daily at 8:00 Asia/Tehran from GitHub
-data by this repository's scheduled workflow, so the profile does not depend on
-a third-party card service.
+All three activity charts are refreshed every six hours from GitHub data by this
+repository's scheduled workflow, so the profile does not depend on a third-party
+card service.
 
 ## What I Work On
 

@@ -35,7 +35,7 @@ REQUIRED_ASSETS = (
     "assets/github-top-languages.svg",
 )
 ACTIVITY_ASSETS = REQUIRED_ASSETS[1:]
-REQUIRED_ACTIVITY_CADENCE = "refreshed daily at 8:00 Asia/Tehran"
+REQUIRED_ACTIVITY_CADENCE = "refreshed every six hours"
 REQUIRED_POSITIONING = "Designing scalable and reliable cloud and on-prem platforms."
 REQUIRED_CONTACT = "https://www.linkedin.com/in/zahiri/"
 

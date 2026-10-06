@@ -11,11 +11,11 @@ IMMUTABLE_COMMIT = re.compile(r"[0-9a-f]{40}")
 
 
 class WorkflowSecurityTests(unittest.TestCase):
-    def test_activity_chart_workflow_runs_daily_at_tehran_eight(self) -> None:
+    def test_activity_chart_workflow_runs_every_six_hours(self) -> None:
         content = ACTIVITY_WORKFLOW.read_text(encoding="utf-8")
 
-        self.assertIn('cron: "30 4 * * *"', content)
-        self.assertIn("08:00 Asia/Tehran", content)
+        self.assertIn('cron: "19 */6 * * *"', content)
+        self.assertIn("Every six hours", content)
 
     def test_external_actions_are_pinned_to_full_commit_shas(self) -> None:
         references: list[tuple[Path, str, str]] = []

@@ -1,0 +1,9 @@
+# Python bytecode and test caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development environments
+.venv/
+venv/
+.env

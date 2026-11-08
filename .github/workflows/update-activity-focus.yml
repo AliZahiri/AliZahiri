@@ -26,6 +26,11 @@ jobs:
           GITHUB_ACTIVITY_DAYS: "365"
         run: python scripts/generate_activity_focus.py
 
+      - name: Validate generated charts and profile
+        run: |
+          python scripts/validate_profile_readme.py
+          python -m unittest discover -s tests
+
       - name: Commit updated charts
         run: |
           git add \

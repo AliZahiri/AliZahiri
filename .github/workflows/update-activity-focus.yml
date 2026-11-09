@@ -2,8 +2,8 @@ name: Update GitHub Activity Charts
 
 on:
   schedule:
-    # Every six hours, at minute 19 (UTC).
-    - cron: "19 */6 * * *"
+    # Every six hours, at minute 49 (UTC), away from the daily portfolio run window.
+    - cron: "49 */6 * * *"
   workflow_dispatch:
 
 permissions:

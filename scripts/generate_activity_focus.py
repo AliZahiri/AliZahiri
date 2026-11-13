@@ -2,11 +2,13 @@
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import math
 import os
 import sys
 import time
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
@@ -27,6 +29,12 @@ WHITE = "#F5F7FA"
 MUTED_TEXT = "#AAB4C3"
 TRACK = "#081B33"
 FONT_FAMILY = "Inter, Segoe UI, Arial, sans-serif"
+RETRYABLE_HTTP_STATUS_CODES = {408, 425, 429, 500, 502, 503, 504}
+RETRYABLE_GRAPHQL_ERROR_CODES = {"INTERNAL", "RATE_LIMITED", "SERVICE_UNAVAILABLE"}
+
+
+class TransientGitHubAPIError(RuntimeError):
+    """An API response indicates a failure that may succeed on retry."""
 
 
 @dataclass(frozen=True)
@@ -107,24 +115,48 @@ def github_graphql(
             with urllib.request.urlopen(request, timeout=30) as response:
                 body = json.loads(response.read().decode("utf-8"))
             if body.get("errors"):
+                errors = body["errors"]
                 messages = "; ".join(
-                    str(error.get("message", error)) for error in body["errors"]
+                    str(error.get("message", error)) for error in errors
                 )
-                raise RuntimeError(f"GitHub GraphQL error: {messages}")
+                retryable = all(
+                    error.get("type") in RETRYABLE_GRAPHQL_ERROR_CODES
+                    or error.get("extensions", {}).get("code")
+                    in RETRYABLE_GRAPHQL_ERROR_CODES
+                    or "rate limit exceeded" in str(error.get("message", "")).casefold()
+                    or "secondary rate limit" in str(error.get("message", "")).casefold()
+                    for error in errors
+                )
+                error_type = TransientGitHubAPIError if retryable else RuntimeError
+                raise error_type(f"GitHub GraphQL error: {messages}")
             data = body.get("data")
             if not isinstance(data, dict):
                 raise RuntimeError("GitHub GraphQL response did not contain data")
             return data
-        except Exception as error:  # urllib and malformed/API responses share retry policy
+        except urllib.error.HTTPError as error:
+            if error.code not in RETRYABLE_HTTP_STATUS_CODES:
+                raise RuntimeError(
+                    f"GitHub API request failed with HTTP {error.code}: {error.reason}"
+                ) from error
             last_error = error
-            if attempt < attempts:
-                delay = 2 ** (attempt - 1)
-                print(
-                    f"GitHub API request failed (attempt {attempt}/{attempts}); "
-                    f"retrying in {delay}s: {error}",
-                    file=sys.stderr,
-                )
-                time.sleep(delay)
+        except TransientGitHubAPIError as error:
+            last_error = error
+        except (
+            urllib.error.URLError,
+            TimeoutError,
+            ConnectionError,
+            http.client.IncompleteRead,
+        ) as error:
+            last_error = error
+
+        if attempt < attempts:
+            delay = 2 ** (attempt - 1)
+            print(
+                f"GitHub API request failed (attempt {attempt}/{attempts}); "
+                f"retrying in {delay}s: {last_error}",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
 
     raise RuntimeError(f"GitHub API request failed after {attempts} attempts: {last_error}")
 

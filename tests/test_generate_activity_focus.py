@@ -1,13 +1,17 @@
+import io
+import json
 import tempfile
+import urllib.error
 import unittest
 import xml.etree.ElementTree as ET
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import call, patch
 
 from scripts.generate_activity_focus import (
     ActivityCounts,
     ActivitySummary,
     TopLanguage,
+    github_graphql,
     render_activity_distribution_svg,
     render_activity_summary_svg,
     render_top_languages_svg,
@@ -35,6 +39,126 @@ class ActivityPercentageTests(unittest.TestCase):
 
         self.assertEqual(0, sum(percentages.values()))
         self.assertTrue(all(value == 0 for value in percentages.values()))
+
+
+class GitHubGraphQLRetryTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.valid_response = io.BytesIO(b'{"data": {"viewer": {"login": "AliZahiri"}}}')
+
+    def test_retries_transient_http_failure_then_returns_data(self) -> None:
+        transient_error = urllib.error.HTTPError(
+            "https://api.github.com/graphql", 503, "Service Unavailable", {}, None
+        )
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                side_effect=[transient_error, self.valid_response],
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            data = github_graphql("query", {}, "token")
+
+        self.assertEqual({"viewer": {"login": "AliZahiri"}}, data)
+        self.assertEqual(2, urlopen.call_count)
+        sleep.assert_called_once_with(1)
+
+    def test_retries_transient_network_failure(self) -> None:
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                side_effect=[urllib.error.URLError("connection reset"), self.valid_response],
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            data = github_graphql("query", {}, "token")
+
+        self.assertIn("viewer", data)
+        self.assertEqual(2, urlopen.call_count)
+        sleep.assert_called_once_with(1)
+
+    def test_retries_graphql_rate_limit_error(self) -> None:
+        rate_limit_response = io.BytesIO(
+            b'{"errors": [{"type": "RATE_LIMITED", "message": "API rate limit exceeded"}]}'
+        )
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                side_effect=[rate_limit_response, self.valid_response],
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            data = github_graphql("query", {}, "token")
+
+        self.assertIn("viewer", data)
+        self.assertEqual(2, urlopen.call_count)
+        sleep.assert_called_once_with(1)
+
+    def test_does_not_retry_permanent_http_failure(self) -> None:
+        permanent_error = urllib.error.HTTPError(
+            "https://api.github.com/graphql", 401, "Unauthorized", {}, None
+        )
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                side_effect=permanent_error,
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "HTTP 401"):
+                github_graphql("query", {}, "token")
+
+        urlopen.assert_called_once()
+        sleep.assert_not_called()
+
+    def test_transient_retries_stop_at_attempt_limit(self) -> None:
+        errors = [
+            urllib.error.HTTPError(
+                "https://api.github.com/graphql", 503, "Service Unavailable", {}, None
+            )
+            for _ in range(3)
+        ]
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                side_effect=errors,
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "after 3 attempts"):
+                github_graphql("query", {}, "token", attempts=3)
+
+        self.assertEqual(3, urlopen.call_count)
+        self.assertEqual([call(1), call(2)], sleep.call_args_list)
+
+    def test_does_not_retry_graphql_errors(self) -> None:
+        response = io.BytesIO(b'{"errors": [{"message": "Invalid query"}]}')
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                return_value=response,
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            with self.assertRaisesRegex(RuntimeError, "GraphQL error: Invalid query"):
+                github_graphql("query", {}, "token")
+
+        urlopen.assert_called_once()
+        sleep.assert_not_called()
+
+    def test_does_not_retry_invalid_json_response(self) -> None:
+        response = io.BytesIO(b"not-json")
+        with (
+            patch(
+                "scripts.generate_activity_focus.urllib.request.urlopen",
+                return_value=response,
+            ) as urlopen,
+            patch("scripts.generate_activity_focus.time.sleep") as sleep,
+        ):
+            with self.assertRaises(json.JSONDecodeError):
+                github_graphql("query", {}, "token")
+
+        urlopen.assert_called_once()
+        sleep.assert_not_called()
 
 
 class ActivitySvgTests(unittest.TestCase):
